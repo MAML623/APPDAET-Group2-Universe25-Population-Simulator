@@ -4,38 +4,98 @@
 
 ## Project Overview
 
-The Universe 25 Population Simulator is a Python desktop application that simulates how a mouse population changes across generations. It uses a simplified mathematical model to calculate population growth and decline based on birth rates, death rates, and available resources.
+The Universe 25 Population Simulator is a Python desktop application that simulates changes in a mouse population across multiple generations. The simulation considers the initial male and female populations, reproduction rates, death rates, and available resources.
 
-The project aims to demonstrate how reproduction, mortality, and limited resources can affect population size over time.
+The project aims to demonstrate how these factors affect population growth and decline using a simplified mathematical model. Users can adjust simulation settings and observe how the population changes over time.
 
-## Project Features
+## Planned Features
 
-The application is designed to include the following features:
+The application will include the following features:
 
-- **Population Setup:** Set the initial number of male and female mice, available resources, and number of generations.
-- **Simulation Settings:** Adjust birth rates, death rates, and resource replenishment.
-- **Population Calculation:** Calculate births, deaths, and population changes for each generation.
+- **Scenario Setup:** Enter the initial male and female populations, starting resources, and number of generations.
+- **Model Controls:** Adjust birth rates, death rates, and resource replenishment settings.
+- **Population Simulation:** Calculate births, deaths, and population changes for each generation.
 - **Resource Management:** Track resource consumption and replenishment while preventing negative values.
 - **Simulation Controls:** Run, Step, and Reset the simulation.
-- **Results and Reports:** Display population counts, births, deaths, and remaining resources for each generation.
+- **Generation Reports:** Display male and female populations, total population, births, deaths, and remaining resources.
 - **Data Visualization:** Display population and resource changes through graphs.
-- **Input Validation:** Detect invalid inputs and prevent impossible population or resource values.
+- **Input Validation:** Prevent invalid inputs and impossible simulation values.
+- **Final Summary:** Display the population and resource conditions at the end of the simulation.
 
-## Technologies Used
+## Simulation Algorithm
+
+The application will use a generation-based population simulation algorithm.
+
+The simulation begins at Generation 0 using the initial population and resources entered by the user. For each following generation, the program will:
+
+1. Apply resource replenishment.
+2. Calculate deaths based on the mortality rules.
+3. Apply additional deaths when resources are insufficient.
+4. Calculate possible births based on the surviving male and female populations.
+5. Limit births according to available resources.
+6. Deduct resource consumption and update the population.
+7. Record and display the results for the generation.
+
+The simulation continues until the selected generation limit is reached.
+
+The model follows these basic rules:
+
+- New Population = Previous Population + Births - Deaths
+- Total Population = Male Population + Female Population
+- Population and resources must never become negative.
+
+The detailed calculation rules will be finalized during development.
+
+## Technologies and Development Tools
 
 - **Programming Language:** Python 3
 - **Development Environments:** PyCharm and Visual Studio Code
-- **GUI Framework:** Tkinter
+- **Graphical User Interface:** Tkinter
 - **Data Visualization:** Matplotlib
+- **Additional Python Libraries:** random and unittest
 - **Version Control:** Git and GitHub
 
-## Project Structure
+Tkinter will be used to create the application's windows, input fields, buttons, and results table. Matplotlib will be used to display population and resource graphs.
 
-The application will be organized into separate Python files for the simulation algorithm, user interface, input validation, and data visualization. Additional folders will contain project documentation and testing files.
+## Proposed Project Structure
+
+The application will be organized into separate Python files to make development and testing easier.
+
+- **main.py** — Starts the application.
+- **model.py** — Handles population calculations, births, deaths, and resources.
+- **validation.py** — Validates user inputs.
+- **state.py** — Manages the simulation state and Run, Step, and Reset functions.
+- **gui.py** — Handles the graphical interface, results table, and charts.
+- **tests/** — Contains automated tests.
+- **docs/** — Contains project planning and documentation files.
+
+## Expected Inputs and Outputs
+
+### Inputs
+
+- Initial male and female population counts
+- Starting resources
+- Number of generations (1–100)
+- Birth rate and death rate
+- Resource replenishment settings
+- Optional random seed
+
+### Outputs
+
+- Generation-by-generation population reports
+- Population history chart
+- Resource history chart
+- Final simulation summary
+
+## Development Status
+
+The project is currently in the planning and preparation stage. The simulation algorithm, graphical interface, and testing components will be implemented during the next development stages.
 
 ## Project Limitations
 
-The simulator is intended for educational purposes only. It uses simplified assumptions and does not scientifically recreate the historical Universe 25 experiment or predict actual animal or human population behavior.
+The simulator uses a simplified, assumption-driven population model for educational purposes. It does not scientifically reproduce the historical Universe 25 experiment or simulate detailed mouse behaviors.
+
+The results are based on the rules and assumptions used in the application and should not be interpreted as accurate predictions of real-world population behavior.
 
 ## Group Members
 
@@ -53,4 +113,4 @@ Engr. Bob Mathew D. Sunga, MSc.
 
 ## AI Assistance Disclosure
 
-AI assistance was used in preparing the initial project documentation. The group is responsible for developing, understanding, and testing the Python application.
+ChatGPT was used to assist in preparing project planning and documentation. The group is responsible for reviewing, implementing, understanding, and testing the Python application.
