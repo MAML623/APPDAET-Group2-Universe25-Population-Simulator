@@ -90,6 +90,7 @@ The application will be organized into separate Python files to make development
 ## Development Status
 
 The project is currently in the planning and preparation stage. The simulation algorithm, graphical interface, and testing components will be implemented during the next development stages.
+The repository currently includes the initial Python files and planning documents for Parts A, B, and C of Progress Report 1.
 
 ## Project Limitations
 
